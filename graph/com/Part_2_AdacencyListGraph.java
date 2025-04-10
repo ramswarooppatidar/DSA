@@ -21,6 +21,12 @@ public class Part_2_AdacencyListGraph {
 		adjacancyListMap.get(source).remove(destination);
 		adjacancyListMap.get(destination).remove(source);
 	}
+	public void removeVertx(int v) {
+		adjacancyListMap.remove(v);
+		for(List<Integer> nehbourIntegers : adjacancyListMap.values()) {
+			nehbourIntegers.remove(v);
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Part_2_AdacencyListGraph G = new Part_2_AdacencyListGraph();

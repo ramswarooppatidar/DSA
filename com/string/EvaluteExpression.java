@@ -3,9 +3,10 @@ package com.string;
 import java.util.Stack;
 
 public class EvaluteExpression {
+	
 
 	//handle only simple expression without brackets
-	public static int evaluteExpression(String s) {
+	public static int evaluteExpressionSimple(String s) {
 		Stack<Integer> stack = new Stack<>();
 		char sign = '+';
 		int num =0;
@@ -40,6 +41,59 @@ public class EvaluteExpression {
 		}
 		return result;
 	}
+	
+	
+	//solve recusrssively tracking with static varible,
+	static int i = 0;
+	public static int evaluateExpressionRecursive(String s) {
+        i = 0;
+        return helper(s);
+    }
+
+    private static int helper(String s) {
+        int num = 0;
+        char sign = '+'; 
+        int result = 0;
+        int lastNum = 0;
+
+        while (i < s.length()) {
+            char c = s.charAt(i);
+
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+            }
+
+            if (c == '(') {
+                i++;
+                num = helper(s); // solve inner bracket first
+            }
+
+            if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
+                if (sign == '+') {
+                    result += lastNum;
+                    lastNum = num;
+                } else if (sign == '-') {
+                    result += lastNum;
+                    lastNum = -num;
+                } else if (sign == '*') {
+                    lastNum = lastNum * num;
+                } else if (sign == '/') {
+                    lastNum = lastNum / num;
+                }
+
+                if (c == ')') {
+//                    i++;
+                    break; // end current bracket
+                }
+
+                sign = c;
+                num = 0;
+            }
+            i++;
+        }
+
+        return result + lastNum;
+    }
 	
 	//take refernce from jenny lecture , and understand the concept prfix to postfix 
 	    public static int evaluate2(String s) {
@@ -118,14 +172,15 @@ public class EvaluteExpression {
 	 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String string="3*2-11*3-7+5";
+		String expression2="3*(1+(2-11)*3+7)+5";
 		
 //		String expression2 = "(1+(4+(15 -2/5)*2)*3)+(6-8)";
-//		String expression2 = "(1+(4+(1*(7*2)/5)*2)*3)+(6-8)";
+//		String expression2 = "(1+(4+(1 + 2)/5)*2)*3)+(6-8)";
 //		String expression2 = "(1+(1+(1+(5 +7*2/5))*2)*3)+(6-8)";
-		String expression2 = "(1+(4+(1 +(5 +7*2/5)*2)*3))+(6-8)";
+//		String expression2 = "(1+(4+(1 +(5 +7*2/5)*2)*3))+(6-8)";
 		
-		System.out.println(evaluteExpression(expression2));
+		System.out.println(evaluteExpressionSimple(expression2));
+		System.out.println(evaluateExpressionRecursive(expression2));
 		System.out.println(evaluate2(expression2));
        
 	}

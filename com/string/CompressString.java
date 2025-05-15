@@ -5,7 +5,8 @@ public class CompressString {
 	public static String compressString(String s) {
 		String string=new String();
 		int n = s.length();
-		char c=s.charAt(0);
+		char c = s.charAt(0);
+		
 		for(int i = 0; i<s.length(); i++) {
 			c = s.charAt(i);
 			int count = 1;

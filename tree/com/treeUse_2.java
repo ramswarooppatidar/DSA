@@ -60,6 +60,7 @@ public class treeUse_2 {
         return 1 + leftNode+right;
           
     }
+    
     public static BinaryTreeNode<Integer> takeInputLevelWise(){
         Scanner sc = new Scanner(System.in);
         System.out.println("enter root data");
@@ -89,6 +90,7 @@ public class treeUse_2 {
         }
         return root;
     }
+    
     public static void printLevelWise(BinaryTreeNode<Integer> root){
         if(root == null){
             return;
@@ -113,6 +115,39 @@ public class treeUse_2 {
             System.out.println("");
         }
     }
+    
+    public static List<List<Integer>> zigZagTraversal(BinaryTreeNode<Integer> root){
+    	List<List<Integer>> ans = new ArrayList<>();
+    	Queue<BinaryTreeNode<Integer>> queue = new LinkedList<>();
+    	boolean flag = false;
+    	 while(!queue.isEmpty()) {
+    		 
+    		 Stack<Integer> stack = new Stack<>();
+    		 List<Integer> list = new ArrayList<Integer>();
+    		 int size = queue.size();
+    		 
+    		 for(int i =0; i<size; i++) {
+    			 BinaryTreeNode<Integer> front = queue.poll();
+    			 
+    			 if(flag) {
+    				 stack.add(front.data);
+    			 }else {
+    				 list.add(front.data);
+    			 }
+    			 
+    			 if(front.left != null) queue.add(front.left);
+    			 if(front.right != null) queue.add(front.right);
+    		 }
+    		 
+    		 while(!stack.isEmpty()) {
+    			 list.add(stack.pop());
+    		 }
+    		 ans.add(list);
+    		 flag = !flag;
+    	 }
+    	 return ans;
+    }
+    
     public static void printPreOrderTraversal(BinaryTreeNode<Integer> root){
         if(root == null){
             return;

@@ -6,7 +6,7 @@ public class EvaluteExpression {
 	
 
 	//handle only simple expression without brackets
-	public static int evaluteExpressionSimple(String s) {
+   public static int evaluteExpressionSimple(String s) {
 		Stack<Integer> stack = new Stack<>();
 		char sign = '+';
 		int num =0;
@@ -44,11 +44,11 @@ public class EvaluteExpression {
 	
 	
 	//solve recusrssively tracking with static varible,
-	static int i = 0;
-	public static int evaluateExpressionRecursive(String s) {
+   static int i = 0;
+    public static int evaluateExpressionRecursive(String s) {
         i = 0;
         return helper(s);
-    }
+     }
 
     private static int helper(String s) {
         int num = 0;
@@ -172,14 +172,14 @@ public class EvaluteExpression {
 	 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String expression2="3*(1+(2-11)*3+7)+5";
+		String expression2="3*2 + (1+(2-1)*3+7)+5";
 		
 //		String expression2 = "(1+(4+(15 -2/5)*2)*3)+(6-8)";
 //		String expression2 = "(1+(4+(1 + 2)/5)*2)*3)+(6-8)";
 //		String expression2 = "(1+(1+(1+(5 +7*2/5))*2)*3)+(6-8)";
 //		String expression2 = "(1+(4+(1 +(5 +7*2/5)*2)*3))+(6-8)";
 		
-		System.out.println(evaluteExpressionSimple(expression2));
+		System.out.println(evaluteExpressionSimple("3*2 + 1"));
 		System.out.println(evaluateExpressionRecursive(expression2));
 		System.out.println(evaluate2(expression2));
        

@@ -36,7 +36,7 @@ public class FourSumZero {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int nums[] = {1,0,-1,0,-2,2,3,4,-5,-3,6,-8,7,-10,8,-8,9,-9,10,12,-6};
-		List<List<Integer>> Result = FourSumZero.fourSum(nums, 0);
+		List<List<Integer>> Result = FourSumZero.fourSum(nums, 27);
 		System.out.println(Result);
 
 	}

@@ -18,7 +18,7 @@ public class StringManipulation {
 					k = k*10 + (s.charAt(index) - '0');
 					index++;
 				}
-				index++;  //scape [
+				index++;
 				
 				String smallString = decodeString(s);
 				

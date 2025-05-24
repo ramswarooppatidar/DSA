@@ -19,6 +19,7 @@ public class RangeSummary {
 	             while(i<n && nums[i-1]+1== nums[i]){
 	                i++;
 	                if(i == n) {
+//	                 when i++ then reached at last index then loop it not inter again but before it we set flag
 	                	flag= false;
 	                }
 	             }
@@ -40,7 +41,7 @@ public class RangeSummary {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int nums[] = {0,1,2,4,5,10,11,12,13,14,16,22,23,19, 24,25,26,30 ,31};
-		int nums2[]= {0,2,3,4,6,8,9};
+		int nums2[]= {0,2,3,4,6,8,9,10,13};
 		List<String> list = summaryRanges(nums);
 		List<String> list2 = summaryRanges(nums2);
 		System.out.println(list);

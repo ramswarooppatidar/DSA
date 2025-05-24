@@ -11,8 +11,12 @@ public class FindRelativeRanks {
 		
 		for(int i =0; i<n; i++) {
 			index[i]=i;
+		} 
+	   Arrays.sort(index, (a, b)-> nums[b] - nums[a]);
+	   for(Integer i : index) {
+			System.out.print(i + " ");
 		}
-		Arrays.sort(index, (a, b)-> nums[b] - nums[a]);
+	   System.out.println();
 		
 		for(int i =0; i<n; i++) {
 			if(i == 0) {
@@ -32,7 +36,7 @@ public class FindRelativeRanks {
 		int arr[]= {24,6,4,9,31,0,11,23,67};
 		String res[] = findRelativeRan(arr);
 		for(String string : res) {
-			System.out.print(string + " ");
+			System.out.print(string + ", ");
 		}
 
 	}

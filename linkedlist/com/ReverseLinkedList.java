@@ -1,5 +1,6 @@
 package linkedlist.com;
 
+import java.lang.classfile.Opcode;
 import java.util.Arrays;
 
 public class ReverseLinkedList {
@@ -18,6 +19,19 @@ public class ReverseLinkedList {
 //	    head = preNode;
 //		return head;
 		return preNode;
+	}
+	public static Node reverseL(Node head) {
+		Node preNode = null;
+		Node current = head;
+		while(current != null) {
+			Node nextNode = current.next;
+			current.next = preNode;
+			preNode = current;
+			current = nextNode;
+		}
+		return preNode;
+		
+		
 	}
 
 	public static void main(String[] args) {

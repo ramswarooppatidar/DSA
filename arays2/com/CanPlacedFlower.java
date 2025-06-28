@@ -50,6 +50,10 @@ public class CanPlacedFlower {
     }
 	 public static boolean canPlaceFlowers2(int[] flowerbed, int n) {
 	        int m = flowerbed.length;
+	        if(m == 1) {
+	        	if(flowerbed[0] == 0)
+	        	n--;
+	        }
 	        for(int i =0;i<m;i++){
 	            if(i == 0){
 	                if(flowerbed[i] == 0 && flowerbed[i+1] == 0){
@@ -66,7 +70,7 @@ public class CanPlacedFlower {
 	                  n--;
 	            }  
 	        }
-	        return n == 0;
+	        return n <= 0;
 	    }
 
 

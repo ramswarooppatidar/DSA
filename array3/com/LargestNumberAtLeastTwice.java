@@ -55,7 +55,7 @@ public class LargestNumberAtLeastTwice {
 //		table(20);
 //		addNumber(2,3,5);
 //		reverseNumber(123456);
-		countLeter("BHUMIPRACHI HAI KYA");
+		countLeter("BHUM1IP3RA5CHI7HAIKYA");
 
 	}
 

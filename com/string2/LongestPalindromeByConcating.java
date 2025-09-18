@@ -13,7 +13,7 @@ public class LongestPalindromeByConcating {
 				length += 4;
 				map.put(rev, map.get(rev) - 1);
 			}else {
-				map.put(word, map.getOrDefault(map, 0)+1);
+				map.put(word, map.getOrDefault(word, 0)+1);
 			}
 		}
 		//check for middle 

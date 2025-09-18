@@ -33,6 +33,7 @@ public class StringManipulation {
 				index++;
 			}
 		}
+		index = 0;
 		return sb.toString();
 	}
 	
@@ -45,7 +46,13 @@ public class StringManipulation {
         //output   abc2[abcbcbc]
         //output    abc abcbcbcabcbcbc
 		StringManipulation obj1 = new StringManipulation();
-       System.out.println(obj1.decodeString("3[a2[c]]"));
+//       System.out.println(obj1.decodeString("3[a2[c]]"));
+       //3[Ra]Y2[E]x
+       System.out.println(obj1.decodeString("3[ed2[DonD]R-]"));
+       
+       System.out.println(obj1.decodeString("3[Ra]Y2[E]x"));
+		System.out.println(obj1.decodeString("3[RaY2[E]x-]"));
+
 	}
 
 }

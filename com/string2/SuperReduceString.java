@@ -41,7 +41,7 @@ public class SuperReduceString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(superReduceString("aabbbs"));
-		System.out.println(superReduceString2("aabbbs"));
+		System.out.println(superReduceString2("aabbbbss"));
 
 	}
 

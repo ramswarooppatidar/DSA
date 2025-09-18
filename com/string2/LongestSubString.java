@@ -22,11 +22,15 @@ public class LongestSubString {
 				int length = sBuilder.length();
 				if(sBuilder.length()>longestSubString.length()) {
 					longestSubString = sBuilder.toString();
-					sBuilder = new StringBuilder();
+//					sBuilder = new StringBuilder();
 				}
+				while(sBuilder.length()>0 && sBuilder.indexOf(String.valueOf(ch)) != -1) {
+					sBuilder.deleteCharAt(0);
+				}
+				sBuilder.append(ch);
 			}
 		}
-		return longestSubString;
+		return sBuilder.length()>longestSubString.length() ? sBuilder.toString() : longestSubString;
 	}
 	//sliding window
 	//time complexity O(n^2) in worst case remove at indexo(n) due to shifting all elements
@@ -72,13 +76,16 @@ public class LongestSubString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String string ="dsfetyundbabvscdfge";
+		String string ="aab";
 	String reString=	longestSubString(string);
 	System.out.println(reString);
 	
-	String string1 ="dsfetyundbavscdfge";
+	String string1 ="aab";
 	String reString1 =	longestSubStringOptimized(string1);
 	System.out.println(reString1);
+	
+	String reString2 = longestSubstring("aab");
+	System.out.println(reString2);
 
 	}
 

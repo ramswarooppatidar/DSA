@@ -6,12 +6,12 @@ import java.util.List;
 public class Intersection {
 	public static int[] iintersection(int []nums1, int[]nums2) {
 		List<Integer> list = new ArrayList<>();
-		boolean visted[] = new boolean[nums2.length];
+		boolean visited[] = new boolean[nums2.length];
 		for(int i =0; i<nums1.length; i++) {
 			for(int j =0; j<nums2.length;j++) {
-				if(nums1[i] == nums2[j] && !visted[j]) {
+				if(nums1[i] == nums2[j] && !visited[j]) {
 					list.add(nums2[j]);
-					visted[j] = true;
+					visited[j] = true;
 					break;
 				}
 			}

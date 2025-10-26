@@ -1,6 +1,7 @@
 package com.string;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class PatternMatching {
 
@@ -23,10 +24,29 @@ public class PatternMatching {
 		}
 		return true;
 	}
+	public static boolean patMatch(String pat, String wordss) {
+		Map<Character, String> map = new HashMap<>();
+		String words[] = wordss.split(" ");
+		for(int i =0; i<pat.length(); i++) {
+			char ch = pat.charAt(i);
+			if(map.containsKey(ch)) {
+				String matcString = map.get(ch);
+				if(!matcString.equals(words[i])) {
+					return false;
+				}
+			}else {
+				map.put(ch, words[i]);
+			}
+		}
+		return true;
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(patternMatching("abba", "ram shyam shyam ram"));
 		System.out.println(patternMatching("abab", "ram shyam shyam ram"));
+		
+		System.out.println(patMatch("abba", "ram shyam shyam ram"));
+		System.out.println(patMatch("abab", "ram shyam shyam ram"));
 	}
 
 }

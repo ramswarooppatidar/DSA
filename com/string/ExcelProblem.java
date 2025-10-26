@@ -7,7 +7,7 @@ public class ExcelProblem {
 			int rem = (colNum-1) % 26;
 			char ch = (char)('A' + rem);
 			sb.append(ch);
-			colNum = (colNum -1)/26;
+			colNum = (colNum - 1)/26;
 		}
 		return sb.reverse().toString();
 	}
@@ -22,7 +22,7 @@ public class ExcelProblem {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(convertToTitle(231707867));
+		System.out.println(convertToTitle(26));
 		System.out.println(titleToNumber("AHGD"));
 
 	}

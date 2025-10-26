@@ -13,6 +13,7 @@ public class FindRelativeRanks {
 			index[i]=i;
 		} 
 	   Arrays.sort(index, (a, b)-> nums[b] - nums[a]);
+	   System.out.print("sort arr elements based on index :");
 	   for(Integer i : index) {
 			System.out.print(i + " ");
 		}

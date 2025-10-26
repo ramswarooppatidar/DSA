@@ -73,19 +73,45 @@ public class LongestSubString {
 		}
 		return resuString;
 	}
+	public static String solutions(String s) {
+		String resultString = "";
+		StringBuilder sb = new StringBuilder();
+		for(int i =0; i<s.length();i++){
+			char ch = s.charAt(i);
+			if(sb.indexOf(String.valueOf(ch)) == -1) {
+				sb.append(ch);
+			}else {
+				if(sb.length() > resultString.length()) {
+					resultString = sb.toString();
+				}
+				while(sb.length() > 0 && sb.indexOf(String.valueOf(ch)) != -1) {
+					sb.deleteCharAt(0);
+				}
+				
+				sb.append(ch);
+				
+			}
+			
+		}
+		return sb.length() > resultString.length()? sb.toString() : resultString;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String string ="aab";
+		String string ="adcvsbdghsbaba";
 	String reString=	longestSubString(string);
 	System.out.println(reString);
 	
-	String string1 ="aab";
+	String string1 ="adcvsbdghsbaba";
 	String reString1 =	longestSubStringOptimized(string1);
 	System.out.println(reString1);
 	
-	String reString2 = longestSubstring("aab");
+	String reString2 = longestSubstring("adcvsbdghsbaba");
 	System.out.println(reString2);
+	
+	String reString3 = solutions("adcmnvsbdghsbaba");
+	System.out.println(reString3);
+	
 
 	}
 

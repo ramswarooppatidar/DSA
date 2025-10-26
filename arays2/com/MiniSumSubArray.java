@@ -20,7 +20,7 @@ public class MiniSumSubArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {2,1,2,3,5,3,8,1,21,1,1,1,1,1,1,1};
+		int arr[] = {2,3,2,1,5,3,8,1,21,1,1,1,1,1,1,1};
 		minisumSubArray(arr,7);
 
 	}

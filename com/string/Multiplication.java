@@ -39,7 +39,7 @@ public class Multiplication {
 		return sb.toString();
 		}
   public static void main(String arg[]) {
-	  System.out.println(multiplication("12", "334356356789897654"));
+	  System.out.println(multiplication("54", "67"));
 	  System.out.println(addingString("12342", "10003"));
   }
 }

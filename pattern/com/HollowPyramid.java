@@ -12,8 +12,8 @@ public class HollowPyramid {
 			}
 			for(int i =0; i<k; i++) {
 				if(i ==0 || i==k-1) {
-					System.out.printf("%-3d", *);
-					System.out.printf("%-3d",val + i);	
+					System.out.printf("%-3d", "*");
+					System.out.printf("%-3d",k + i);	
 				}else {
 					System.out.printf("%-3d");
 				}
